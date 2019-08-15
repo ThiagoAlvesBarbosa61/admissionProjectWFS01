@@ -1,38 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+    function mostraEmail(formulario){
+      alert("O email " + formulario.campotexto.value + " foi enviado");
+    }
+  </script>
 <style>
 body {
-  background-color: darkslateblue;
+  background-color: #595f96;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
 h1 {
   color: white;
-  background-color:  darkslateblue;
+  background-color: #595f96;
   padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 80px;
+  padding-bottom: 120px;
+  text-align: center;
+  font-size: 300%;
+}
+img{
+	width: 55%;
+}
+
+div{
+   text-align: center;
 }
 
 p{color: white;
   text-align: right;
+  font-size: 250%;
+   padding-top: 200px;
 }
 
 .flex-container {
   display: flex;
   flex-wrap: nowrap;
-  background-color:#FFA500;
-  text-align: left;
+  background-color: #cd4d00;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  min-width: 100%; 
+  left: 0;
+  top: 0;
 }
 
-.flex-container .box {
+ .box {
   background-color:white;
-  width: 50%;
-  margin: 10px;
+  width: 100%;
+  margin: 35px;
+  line-height: 105px;
+  color: #cd4d00;
+  padding-top: 50px;
+  padding-right: 60px;
+  padding-bottom: 50px;
+  padding-left: 60px;
   text-align: center;
-  line-height: 75px;
-  font-size: 30px;
-  color: #FFA500
+  font-size: 250%;
+  
+}
+form{
+  background-color: #C1CDCD;
+  text-align: center;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  font-size: 250%;
+}
+#campotexto{
+  font-size: 20pt;
+  color: #6e6e6e;
+  height: 60px;
+  display: inline-block;
+  width: 65%;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#botaoemail {
+  background-color: #cd4d00; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20pt;
+  height: 60px;
 }
 
 </style>
@@ -41,19 +99,22 @@ p{color: white;
 
 <h1>Projeto seletivo Future4</h1>
 
-<img src="future4.jpg" alt="Future4" width="500" height="333">
+<div>
+  <img src="future4.jpg" alt="Future4" width="500" height="333">
+</div>
 
 <p>Turma Web Full Stack 01</p>
 
 <div class="flex-container">
         <div class="box">HTML</div>
-        <div class="box">CCS</div>
-        <div class="box">JavaScript</div>
+        <div class="box">CSS</div>
+        <div class="box">Javascript</div>
 </div>
 
-<form >
-<input type="text" name="enviar e-mail" >
-<input type="submit" value="enviar"> 
+<form onsubmit="return mostraEmail(this);">
+       <input id="campotexto" type="email" onfocus="this.value=''" value="Coloque aqui seu e-mail." /><input type="submit" value="Enviar" id="botaoemail"> 
+	   
+
 </form> 
 
 
